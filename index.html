@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keshav</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4b3e6e8f0d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <video autoplay muted loop class="background-video">
+    <source src="media/rain.mp4" type="video/mp4">
+  </video>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#socials">Socials</a></li>
+    </ul>
+  </nav>
+
+  <section id="intro" class="intro split fade-in">
+    <div class="profile-pic">
+      <img src="media/me.jpg">
+    </div>
+    <div class="text-block">
+      <h1>Hi, I'm <span>Keshav</span></h1>
+      <p>I capture moments and create visuals through <strong>photography</strong> and <strong>design</strong>.</p>
+    </div>
+  </section>
+
+  <section id="photography" class="split fade-in">
+    <div class="text-block">
+      <h2>Photography</h2>
+      <p class="section-intro">A glimpse into how I see the world.</p>
+    </div>
+    <div class="grid">
+      <img src="files/1.jpg">
+      <img src="files/2.jpg">
+      <img src="files/6.jpg">
+      <img src="files/22.jpg">
+    </div>
+  </section>
+
+  <section id="design" class="split reverse fade-in">
+    <div class="text-block">
+      <h2>Design</h2>
+      <p class="section-intro">Minimal, clean and made to tell stories.</p>
+    </div>
+    <div class="grid">
+      <img src="files/panic.png" >
+      <img src="files/point.png">
+    </div>
+  </section>
+
+  <section id="socials" class="socials fade-in">
+  <h2>Find all on my instagram and portfolio</h2>
+  <div class="icons">
+    <a href="https://instagram.com/keshav.xyz">
+      <img src="icons/insta.svg" >
+    </a>
+    <a href="https://mekeshav.netlify.app/">
+      <img src="icons/portfolio.png">
+    </a>
+  </div>
+</section>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in')
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          obs.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.2 })
+    faders.forEach(fader => observer.observe(fader))
+  </script>
+</body>
+</html>
